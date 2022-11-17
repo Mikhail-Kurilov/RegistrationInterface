@@ -10,8 +10,6 @@ export const App: React.FC = () => {
     localStorage.getItem('isLoggedIn') === 'true'
   );
   const [nickName, setNickName] = useState<string | null>(localStorage.getItem('nickName'));
-  const [email, setEmail] = useState<string | null>(localStorage.getItem('email'));
-  const [password, setPassword] = useState<string | null>(localStorage.getItem('password'));
 
   return (
   <div className="wrapper">
@@ -29,8 +27,6 @@ export const App: React.FC = () => {
                 <Component 
                   setIsLoggedIn ={setIsLoggedIn} 
                   setNickName={setNickName}
-                  setEmail={setEmail}
-                  setPassword={setPassword}
                 />
               }
             />
