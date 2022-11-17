@@ -1,10 +1,10 @@
-import React, { useState, useRef, ForwardedRef } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from "../../ui-kit";
-import { IRegistrationTypes, IRegistrationProps } from "../../SampleInterface";
+import { ICommonTypes, ICommonProps } from "../../SampleInterface";
 import "./Authorization.scss";
 
 const schema = yup.object().shape({
@@ -18,7 +18,7 @@ const schema = yup.object().shape({
     .min(8, "Must be at least 8 characters"),
 });
 
-export const Authorization: React.FC<IRegistrationProps> = ({setIsLoggedIn}) => {
+export const Authorization: React.FC<ICommonProps> = ({setIsLoggedIn}) => {
   const [isFocused, setIsFocused] = useState({
     nickName: false,
     email: false,
@@ -34,10 +34,10 @@ export const Authorization: React.FC<IRegistrationProps> = ({setIsLoggedIn}) => 
     watch,
     handleSubmit,
     formState: { errors },
-  } = useForm<IRegistrationTypes>({ resolver: yupResolver(schema) });
+  } = useForm<ICommonTypes>({ resolver: yupResolver(schema) });
   const watchAllFields = watch();
 
-  const onLogin = (data: IRegistrationTypes) => {
+  const onLogin = (data: ICommonTypes) => {
     if (
       (data.nickName === localStorage.getItem("nickName")  ||
       data.email === localStorage.getItem("email")) &&

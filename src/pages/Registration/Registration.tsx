@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { Button, Form } from "../../ui-kit"
-import { IRegistrationTypes, IRegistrationProps } from "../../SampleInterface";
+import { ICommonTypes, ICommonProps } from "../../SampleInterface";
 import "./Registration.scss";
 
 const schema = yup.object().shape({
@@ -26,7 +26,7 @@ const schema = yup.object().shape({
     .min(8, "Must be at least 8 characters"),
 });
 
-export const Registration: React.FC<IRegistrationProps> = ({
+export const Registration: React.FC<ICommonProps> = ({
   setIsLoggedIn,
   setNickName,
 }) => {
@@ -47,10 +47,10 @@ export const Registration: React.FC<IRegistrationProps> = ({
     watch,
     handleSubmit,
     formState: { errors },
-  } = useForm<IRegistrationTypes>({ resolver: yupResolver(schema) });
+  } = useForm<ICommonTypes>({ resolver: yupResolver(schema) });
   const watchAllFields = watch();
 
-  const onSubmit = (data: IRegistrationTypes) => { 
+  const onSubmit = (data: ICommonTypes) => {
     if (data.password === data.passwordConfirm) {
       setIsPasswordMatch(true);
        localStorage.setItem("isLoggedIn", "true");
