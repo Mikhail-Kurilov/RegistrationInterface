@@ -1,0 +1,22 @@
+.FormPage{
+  background-color: rgb(252, 245, 240);
+  position: relative;
+
+  &Content {
+    padding: 1rem;
+  }
+
+  &Redirect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  } 
+
+  &-Button {
+    position: relative;
+    z-index: 1;
+  }
+}
+

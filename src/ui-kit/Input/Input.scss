@@ -1,0 +1,25 @@
+.Input {
+  $this: &;
+  display: flex;
+  align-items: center;
+  padding: 18px 40px 18px 12px;
+  width: -webkit-fill-available;
+  background-color: rgb(241, 218, 255);
+  border: 1px solid transparent;
+  border-top-width: 3px;
+  border-radius: 4px;
+  outline: transparent;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background-color: rgb(255, 251, 255);
+  }
+
+  &#{$this}__error {
+    background-color: rgb(209, 129, 102);
+
+    &:hover {
+      background-color: rgb(219, 119, 119);
+    }
+  }
+}

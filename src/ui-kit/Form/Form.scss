@@ -1,0 +1,96 @@
+.Form {
+  $this: &;
+  position: relative;
+  margin-bottom: 30px;
+  height: 56px;
+  width: 100%; 
+  border-radius: 4px;
+  word-wrap: break-word;
+  border: 1px solid rgb(126, 46, 169);
+  
+  &-Label {
+    font-size: 14px;
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    z-index: 1;
+    color: rgba(0, 0, 0 , 0.54);
+    pointer-events: none;
+    transition: all 0.2s;
+
+    .Input__error {
+      background-color: rgb(219, 119, 119);
+    }
+
+    &Required {
+      color: rgb(219, 119, 119);
+    }
+  }
+
+  &-ErrorMessage {
+    font-size: 12px;
+    display: block;
+    padding-top: 5px;
+    color: rgb(219, 119, 119);
+    transition: all 0.3s;
+  }
+
+  &-Visibility {
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    transform: translate(-50%);
+    right: -5px;
+
+    svg {
+      fill: rgba(0, 0, 0 , 0.54);
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+    }
+  }
+
+  &__active {
+    width: 100%;
+    background-color: white;
+
+    #{$this}-Label {
+      font-size: 12px;
+      top: -11px;
+      padding: 0 3px;
+      color: rgb(114, 0, 175);
+      background-color: white;
+      border: 1px solid rgb(114, 0, 175);
+      border-radius: 4px;
+    } 
+
+    .Input__active {
+      width: -webkit-fill-available;
+      color: rgb(114, 0, 175);
+      background-color: white;
+
+      input:hover,
+      input {
+        background-color: white;
+      }
+    }
+
+    input:-webkit-autofill.Input__active,
+    input:-webkit-autofill.Input__active:hover,
+    input:-webkit-autofill.Input__active:focus,
+    input:-webkit-autofill.Input__active:active {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+    }
+
+    .Input__active.Input__error {
+      background-color: white;
+    }
+
+    &:hover {
+      .Input__active, 
+      .Input.Input__error {
+        background-color: white;
+      }
+    }
+  }
+}

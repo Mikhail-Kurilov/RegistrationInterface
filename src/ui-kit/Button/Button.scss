@@ -1,0 +1,26 @@
+
+.Button {
+  $this: &;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  height: max-content;
+  width: max-content;
+  color: white;
+  background-color: rgb(127, 0, 181);
+  border: 1px solid rgb(127, 0, 181);
+  outline: transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &-Text {
+    margin-left: 12px;
+  }
+
+  &:hover {
+    background-color: rgb(160, 23, 234);;
+  }
+
+  
+}
