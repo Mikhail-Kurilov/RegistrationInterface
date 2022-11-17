@@ -2,6 +2,7 @@
 User can Registrate, Authorize and Logout. His data will be validated and added into a localstorage.
 
 #API
+Vite bundler was used in the project
 The Structure of interface inside src folder consists of: assets, components, pages, routes and ui-kit folders.
 Were added two files with interface samples and custom config for Img component.
 App renders route pathes and set default state.
@@ -44,4 +45,7 @@ Form renders text and password inputs
 Project was written on a Typescript and routing.
 This auxillary libraries were installed:
 Scss, hookform, yup, classnames, uuid.
+
+#Gh-Pages
+https://mikhail-kurilov.github.io/registration
 
